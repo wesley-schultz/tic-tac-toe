@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Dimension;
 import javax.swing.JOptionPane; 
+import java.util.concurrent.TimeUnit;
 
 public class TicTacToeGui implements ActionListener {
 	public JFrame frame;
@@ -27,7 +28,7 @@ public class TicTacToeGui implements ActionListener {
 		for (int i = 0;i<3;i++)
 			for (int j = 0;j<3;j++){
 				btn[i][j]= new JButton();
-				btn[i][j].setName("Location"+i+""+j);
+				btn[i][j].setName("Location"+i+j);
 				btn[i][j].addActionListener(this);
 				panel.add(btn[i][j]);
 				
@@ -64,23 +65,15 @@ public class TicTacToeGui implements ActionListener {
 	}
 			state = t.getState();
 			if(state==TicTacToe.GameState.XWIN)
-				JOptionPane.showMessageDialog(frame,"the winner is x");
+				JOptionPane.showMessageDialog(frame,"The winner is X","Game Over",JOptionPane.PLAIN_MESSAGE);
 			else if(state==TicTacToe.GameState.OWIN)
-				JOptionPane.showMessageDialog(frame,"the winner is o");
+				JOptionPane.showMessageDialog(frame,"The winner is O","Game Over",JOptionPane.PLAIN_MESSAGE);
 			else if (state==TicTacToe.GameState.DRAW)
-				JOptionPane.showMessageDialog(frame,"the winner is tie");
+				JOptionPane.showMessageDialog(frame,"The winner is TIE","Game Over",JOptionPane.PLAIN_MESSAGE);
 	}
 	
 	
-	public static void main (String[] args){
-		java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TicTacToeGui();//.setVisible();
-            }
-        });
-            
-      
-        }
+	
 	
 	
 	
