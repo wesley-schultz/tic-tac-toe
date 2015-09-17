@@ -127,16 +127,19 @@ public class TicTacToe{
 		return state;
 		
 	}
+	public boolean getTurn(){
+		return xturn;
+	}
 
 
 
 	public static void main(String[] args) {
-		TicTacToe t = new TicTacToe();
+		/*TicTacToe t = new TicTacToe();
 		int row=0;
 		int col=0;
-		Scanner in = new Scanner(System.in);
-		while(t.getState()==Mark.ONGOING){
-			if(moveCounter%2=0)
+		
+		while(t.getState() == TicTacToe.GameState.ONGOING){
+			if(t.moveCount%2=0)
 				System.out.println("player X please enter the row and column");
 			else 
 				System.out.println("player O please enter the row and column");
@@ -145,13 +148,13 @@ public class TicTacToe{
 			col = in.nextInt();
 			t.setMark(row,col);
 		}
-		if(t.state==Mark.XWIN)
+		if(t.state == TicTacToe.GameState.XWIN)
 			System.out.println("player X wins");
-		else if(t.state==Mark.OWIN)
+		else if(t.state == TicTacToe.GameState.OWIN)
 			System.out.println("player O wins");
 		else
-			System.out.println("Draw");
-			
+			System.out.println("Draw");*/
 		
+		TicTacToeGui tg = new TicTacToeGui();
 	}
 }
